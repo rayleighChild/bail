@@ -1,2 +1,13 @@
-// export { default as test } from './test'
-// export { test1, test2 } from './test'
+export { default as theme } from "./theme";
+export { SendBtn, BoardBtn, TodoBtn } from "./StyledButton";
+export { SChatForm, SLoginForm, SRegisterForm } from "./StyledForm";
+export { FbIcon, GithubIcon, GoogleIcon, SLoading, SSpin } from "./StyledIcon";
+export {
+  GLayout,
+  GSider,
+  LLayout,
+  MLayout,
+  MSider,
+  ULayout,
+  USider
+} from "./StyledLayout";

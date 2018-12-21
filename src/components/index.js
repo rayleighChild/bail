@@ -1,2 +1,11 @@
-// export { default as test } from './test'
-// export { test1, test2 } from './test'
+export { default as Board } from "./Board";
+export { default as Chat } from "./Chat";
+export { default as Group } from "./Group";
+export { default as GroupSider } from "./GroupSider";
+export { default as Login } from "./Login";
+export { default as MainInfo } from "./MainInfo";
+export { default as MainSider } from "./MainSider";
+export { default as Register } from "./Register";
+export { default as Scheduler } from "./Scheduler";
+export { default as User } from "./User";
+export { default as UserSider } from "./UserSider";

@@ -1,7 +1,7 @@
 ---
 name: Add New Component
 about: Describe this issue template's purpose here.
-title: newComponent
+title: "[Front] componentName"
 labels: ''
 assignees: ''
 

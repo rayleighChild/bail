@@ -1,7 +1,7 @@
 ---
 name: Add New Component
 about: Describe this issue template's purpose here.
-title: ''
+title: newComponent
 labels: ''
 assignees: ''
 
@@ -24,4 +24,4 @@ test: "default",
 
 * Styled Test:  describe component purpose here
 
-Define all names shortest and clearly.
+// Define all names shortest and clearly.

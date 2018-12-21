@@ -1,8 +1,14 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import { LoginContainer } from "./containers";
+import { AppLayout } from "./styledComponents";
 
 class App extends Component {
   render() {
-    return <Fragment>App</Fragment>;
+    return (
+      <AppLayout>
+        <LoginContainer />
+      </AppLayout>
+    );
   }
 }
 

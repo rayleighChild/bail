@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import board from "./board";
 import chat from "./chat";
 import group from "./group";
-import login from "./login";
+import auth from "./auth";
 import register from "./register";
 import scheduler from "./scheduler";
 import user from "./user";
@@ -12,7 +12,7 @@ export default combineReducers({
   board,
   chat,
   group,
-  login,
+  auth,
   register,
   scheduler,
   user

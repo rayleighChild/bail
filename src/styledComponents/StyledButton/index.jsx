@@ -7,13 +7,22 @@ const RoundedBtn = styled(Button)`
   }
 `;
 
+const BoardBtn = styled(RoundedBtn)`
+  &.ant-btn {
+  }
+`;
+
 const SendBtn = styled(RoundedBtn)`
   &.ant-btn {
   }
 `;
 
-const BoardBtn = styled(RoundedBtn)`
+const SocialBtn = styled(RoundedBtn)`
   &.ant-btn {
+    display: block;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -22,4 +31,4 @@ const TodoBtn = styled(RoundedBtn)`
   }
 `;
 
-export { SendBtn, BoardBtn, TodoBtn };
+export { BoardBtn, SendBtn, SocialBtn, TodoBtn };

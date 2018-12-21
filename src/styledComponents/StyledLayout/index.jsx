@@ -3,6 +3,12 @@ import { Layout } from "antd";
 
 const { Sider } = Layout;
 
+const AppLayout = styled(Layout)`
+  &.ant-layout {
+    height: 796px;
+  }
+`;
+
 const GLayout = styled(Layout)`
   &.ant-layout {
   }
@@ -15,6 +21,16 @@ const GSider = styled(Sider)`
 
 const LLayout = styled(Layout)`
   &.ant-layout {
+    border: 1px solid black;
+    width: 50%;
+    height: 100%;
+  }
+  .social-login {
+    margin: 0 auto;
+    width: calc(50% - 100px);
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
   }
 `;
 
@@ -38,4 +54,13 @@ const USider = styled(Sider)`
   }
 `;
 
-export { GLayout, GSider, LLayout, MLayout, MSider, ULayout, USider };
+export {
+  AppLayout,
+  GLayout,
+  GSider,
+  LLayout,
+  MLayout,
+  MSider,
+  ULayout,
+  USider
+};

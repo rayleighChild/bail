@@ -2,11 +2,12 @@ export { default as theme } from "./theme";
 export {
   BoardBtn,
   LoginButton,
+  RightAlignedBtn,
   SendBtn,
   SocialLoginBtn,
   TodoBtn
 } from "./StyledButton";
-export { SChatForm, SLoginForm, SRegisterForm } from "./StyledForm";
+export { SChatForm, SInfoInputForm, SRegisterForm } from "./StyledForm";
 export {
   SFbIcon,
   SGithubIcon,

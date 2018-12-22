@@ -37,18 +37,45 @@ const BoardBtn = styled(RoundedBtn)`
   }
 `;
 
-const LoginButton = styled(BorderedButton)`
-  .submit-btn {
-    display: inline-block;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-    background: #22b8cf;
-    border-radius: 3px;
+const LoginButton = styled.div`
+  &.submit-btn {
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.5rem;
+
+    background: ${oc.teal[6]};
     color: white;
+
     text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+
     cursor: pointer;
+    user-select: none;
+    transition: 0.2s all;
+
+    &:hover {
+      background: ${oc.teal[5]};
+      ${shadow(0)}
+    }
+
+    &:active {
+      background: ${oc.teal[7]};
+    }
+  }
+`;
+
+const RightAlignedBtn = styled.div`
+  & {
+    margin-top: 0.2rem;
+    text-align: right;
+  }
+
+  & a {
+    color: ${oc.gray[6]};
+    &:hover {
+      color: ${oc.gray[7]};
+    }
   }
 `;
 
@@ -59,9 +86,10 @@ const SendBtn = styled(RoundedBtn)`
 
 const SocialLoginBtn = styled(BorderedButton)`
   &.ant-btn {
-    margin-bottom: 1em;
+    margin-top: 1em;
     width: 25em;
     height: 4em;
+    font-size: 0.8rem;
   }
 `;
 
@@ -70,4 +98,11 @@ const TodoBtn = styled(RoundedBtn)`
   }
 `;
 
-export { BoardBtn, LoginButton, SendBtn, SocialLoginBtn, TodoBtn };
+export {
+  BoardBtn,
+  LoginButton,
+  RightAlignedBtn,
+  SendBtn,
+  SocialLoginBtn,
+  TodoBtn
+};

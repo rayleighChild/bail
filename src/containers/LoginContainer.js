@@ -7,6 +7,7 @@ import * as authActions from "../store/modules/auth";
 import * as baseActions from "../store/modules/base";
 
 class FormContainer extends Component {
+  // 페이지에 진입 할 때 헤더를 비활성화
   componentWillMount() {
     this.props.BaseActions.setHeaderVisibility(false);
   }
@@ -15,6 +16,7 @@ class FormContainer extends Component {
   componentWillUnmount() {
     this.props.BaseActions.setHeaderVisibility(true);
   }
+
   // 입력 값에 따라 아이디 상태 변경
   handleIdChange = e => {
     const { AuthActions } = this.props;
@@ -32,6 +34,7 @@ class FormContainer extends Component {
     const { AuthActions } = this.props;
 
     AuthActions.logIn();
+
     // 비우기
     AuthActions.changeInputId("");
     AuthActions.changeInputPw("");

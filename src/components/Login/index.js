@@ -1,11 +1,12 @@
 import React from "react";
 import {
+  LLayout,
+  RightAlignedBtn,
   SFbIcon,
   SGoogleIcon,
   SGithubIcon,
-  LLayout,
   ShadowedBox,
-  SLoginForm,
+  SInfoInputForm,
   SocialLoginBtn,
   LoginButton
 } from "../../styledComponents";
@@ -16,7 +17,8 @@ const Login = ({
   onKeyPress,
   onIdChange,
   onPwChange,
-  onSubmit
+  onSubmit,
+  onMoveReg
 }) => {
   return (
     <LLayout>
@@ -25,15 +27,22 @@ const Login = ({
           <a href="/">Bail</a>
         </div>
         <div className="content-wrapper">
-          <SLoginForm className="login-form">
+          <div className="title">로그인</div>
+          <SInfoInputForm className="login-form">
+            <div className="label">이메일</div>
             <input
               type="text"
               value={inputId}
+              name="email"
+              placeholder="이메일"
               onChange={onIdChange}
               onKeyPress={onKeyPress}
             />
+            <div className="label">비밀번호</div>
             <input
               type="password"
+              name="password"
+              placeholder="비밀번호"
               value={inputPw}
               onChange={onPwChange}
               onKeyPress={onKeyPress}
@@ -41,7 +50,10 @@ const Login = ({
             <LoginButton className="submit-btn" onClick={onSubmit}>
               로그인
             </LoginButton>
-          </SLoginForm>
+            <RightAlignedBtn onClick={onMoveReg}>
+              <a href="/">회원가입</a>
+            </RightAlignedBtn>
+          </SInfoInputForm>
           <div className="social-login">
             <SocialLoginBtn>
               <SFbIcon /> 페이스북 로그인

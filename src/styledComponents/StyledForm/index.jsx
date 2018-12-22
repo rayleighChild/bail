@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import oc from "open-color";
+
 import { Form } from "antd";
 
 const SChatForm = styled(Form)`
@@ -6,8 +8,29 @@ const SChatForm = styled(Form)`
   }
 `;
 
-const SLoginForm = styled(Form)`
+const SInfoInputForm = styled(Form)`
   &.ant-form {
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+
+  &.login-form .label {
+    font-size: 0.8rem;
+    color: ${oc.gray[6]};
+    margin-top: 0.25rem;
+    margin-bottom: 0.1rem;
+  }
+
+  &.login-form input {
+    width: 100%;
+    border: 1px solid ${oc.gray[3]};
+    outline: none;
+    border-radius: 0px;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 `;
 
@@ -16,4 +39,4 @@ const SRegisterForm = styled(Form)`
   }
 `;
 
-export { SChatForm, SLoginForm, SRegisterForm };
+export { SChatForm, SInfoInputForm, SRegisterForm };

@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as authActions from "../store/modules/auth";
+
 import { Login } from "../components";
+import * as authActions from "../store/modules/auth";
+import * as baseActions from "../store/modules/base";
 
 class FormContainer extends Component {
+  componentWillMount() {
+    this.props.BaseActions.setHeaderVisibility(false);
+  }
+
+  // 페이지에서 벗어 날 때 다시 활성화
+  componentWillUnmount() {
+    this.props.BaseActions.setHeaderVisibility(true);
+  }
   // 입력 값에 따라 아이디 상태 변경
   handleIdChange = e => {
     const { AuthActions } = this.props;
@@ -56,7 +66,8 @@ const mapStateToProps = ({ auth }) => ({
 
 // 이런 구조로 하면 나중에 다양한 리덕스 모듈을 적용해야 하는 상황에서 유용합니다.
 const mapDispatchToProps = dispatch => ({
-  AuthActions: bindActionCreators(authActions, dispatch)
+  AuthActions: bindActionCreators(authActions, dispatch),
+  BaseActions: bindActionCreators(baseActions, dispatch)
   // AnotherActions: bindActionCreators(anotherActions, dispatch)
 });
 

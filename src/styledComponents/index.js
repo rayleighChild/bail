@@ -1,7 +1,19 @@
 export { default as theme } from "./theme";
-export { BoardBtn, SendBtn, SocialBtn, TodoBtn } from "./StyledButton";
+export {
+  BoardBtn,
+  LoginButton,
+  SendBtn,
+  SocialLoginBtn,
+  TodoBtn
+} from "./StyledButton";
 export { SChatForm, SLoginForm, SRegisterForm } from "./StyledForm";
-export { FbIcon, GithubIcon, GoogleIcon, SLoading, SSpin } from "./StyledIcon";
+export {
+  SFbIcon,
+  SGithubIcon,
+  SGoogleIcon,
+  SLoading,
+  SSpin
+} from "./StyledIcon";
 export {
   AppLayout,
   GLayout,
@@ -9,6 +21,7 @@ export {
   LLayout,
   MLayout,
   MSider,
+  ShadowedBox,
   ULayout,
   USider
 } from "./StyledLayout";

@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import oc from "open-color";
+
 import { Layout } from "antd";
+import { shadow } from "../../lib/styleUtil";
 
 const { Sider } = Layout;
 
 const AppLayout = styled(Layout)`
   &.ant-layout {
-    height: 796px;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -21,26 +25,51 @@ const GSider = styled(Sider)`
 
 const LLayout = styled(Layout)`
   &.ant-layout {
-    border: 1px solid black;
-    width: 50%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .social-login {
-    margin: 0 auto;
-    width: calc(50% - 100px);
+    margin: 0;
+    width: 100%;
+    height: 100%;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
+    text-align: center;
   }
 `;
 
-const MLayout = styled(Layout)`
-  &.ant-layout {
-  }
-`;
+const MLayout = styled(Layout)``;
 
 const MSider = styled(Sider)`
   &.ant-layout {
+  }
+`;
+
+const ShadowedBox = styled(Layout)`
+  width: 500px;
+  ${shadow(2)}
+  .logo-wrapper {
+    background: ${oc.teal[7]};
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-wrapper a {
+    color: white;
+    font-family: "Rajdhani";
+    font-size: 2.4rem;
+    letter-spacing: 5px;
+    text-decoration: none;
+  }
+
+  .content-wrapper {
+    background: white;
+    padding: 2rem;
+    height: auto;
   }
 `;
 
@@ -61,6 +90,7 @@ export {
   LLayout,
   MLayout,
   MSider,
+  ShadowedBox,
   ULayout,
   USider
 };

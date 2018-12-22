@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 
-import modules from "./modules";
+import modules from "../store/modules";
 
 // Todo: 미들웨어, react-hot-loader 적용
 const configureStore = initialState => {

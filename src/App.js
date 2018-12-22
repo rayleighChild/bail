@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import { LoginContainer } from "./containers";
 import { AppLayout } from "./styledComponents";
+import { Home } from "./pages";
+import { HeaderContainer } from "./containers";
 
 class App extends Component {
   render() {
     return (
       <AppLayout>
-        <LoginContainer />
+        <HeaderContainer />
+        <Home />
       </AppLayout>
     );
   }

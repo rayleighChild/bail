@@ -6,16 +6,7 @@ import { Login } from "../components";
 import * as authActions from "../store/modules/auth";
 import * as baseActions from "../store/modules/base";
 
-class FormContainer extends Component {
-  // 페이지에 진입 할 때 헤더를 비활성화
-  componentWillMount() {
-    this.props.BaseActions.setHeaderVisibility(false);
-  }
-
-  // 페이지에서 벗어 날 때 다시 활성화
-  componentWillUnmount() {
-    this.props.BaseActions.setHeaderVisibility(true);
-  }
+class LoginContainer extends Component {
 
   // 입력 값에 따라 상태 변경
   handleChange = e => {
@@ -76,4 +67,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FormContainer);
+)(LoginContainer);

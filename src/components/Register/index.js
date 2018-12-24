@@ -6,19 +6,16 @@ import {
   SInfoInputForm,
   LoginButton
 } from "../../styledComponents";
+import { Link } from "react-router-dom";
 
 const Register = ({
-  inputId,
-  inputPw,
-  inputUserName,
-  inputPwConfirm,
+  email,
+  password,
+  username,
+  passwordConfirm,
   onKeyPress,
-  onIdChange,
-  onUserNameChange,
-  onPwChange,
-  onPwConfirmChange,
-  onSubmit,
-  onMoveLogin
+  onChange,
+  onSubmit
 }) => {
   return (
     <LLayout>
@@ -33,25 +30,25 @@ const Register = ({
             <input
               name="email"
               placeholder="이메일"
-              value={inputId}
-              onChange={onIdChange}
+              value={email}
+              onChange={onChange}
               onKeyPress={onKeyPress}
             />
-            <div className="label">아이디</div>
+            <div className="label">닉네임</div>
             <input
               name="username"
-              placeholder="아이디"
-              value={inputUserName}
-              onChange={onUserNameChange}
+              placeholder="닉네임"
+              value={username}
+              onChange={onChange}
               onKeyPress={onKeyPress}
             />
             <div className="label">비밀번호</div>
             <input
               type="password"
-              name="passwordConfirm"
+              name="password"
               placeholder="비밀번호"
-              value={inputPw}
-              onChange={onPwChange}
+              value={password}
+              onChange={onChange}
               onKeyPress={onKeyPress}
             />
             <div className="label">비밀번호 확인</div>
@@ -59,14 +56,16 @@ const Register = ({
               type="password"
               name="passwordConfirm"
               placeholder="비밀번호 확인"
-              value={inputPwConfirm}
-              onChange={onPwConfirmChange}
+              value={passwordConfirm}
+              onChange={onChange}
               onKeyPress={onKeyPress}
             />
             <LoginButton className="submit-btn" onClick={onSubmit}>
-              <a href="/">로그인</a>
+              회원가입
             </LoginButton>
-            <RightAlignedBtn onClick={onMoveLogin}>로그인</RightAlignedBtn>
+            <RightAlignedBtn>
+              <Link to="/">로그인</Link>
+            </RightAlignedBtn>
           </SInfoInputForm>
         </div>
       </ShadowedBox>

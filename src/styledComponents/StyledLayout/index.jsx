@@ -40,6 +40,15 @@ const LLayout = styled(Layout)`
   }
 `;
 
+const LMLayout = styled(Layout)`
+  & {
+    width: 100%;
+    height: 100%;
+    .login-form-wrapper {
+    }
+  }
+`;
+
 const MLayout = styled(Layout)``;
 
 const MSider = styled(Sider)`
@@ -95,6 +104,7 @@ export {
   GLayout,
   GSider,
   LLayout,
+  LMLayout,
   MLayout,
   MSider,
   ShadowedBox,

@@ -1,29 +1,54 @@
 import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
 
-const CHANGE_INPUT_ID = "auth/CHANGE_INPUT_ID";
-const CHANGE_INPUT_PW = "auth/CHANGE_INPUT_PW";
+const CHANGE_INPUT = "auth/CHANGE_INPUT";
 const LOGIN = "auth/LOGIN";
 
-export const changeInputId = createAction(CHANGE_INPUT_ID, text => text);
-export const changeInputPw = createAction(CHANGE_INPUT_PW, text => text);
+export const changeInput = createAction(CHANGE_INPUT, text => text);
 export const logIn = createAction(LOGIN);
 
 const initialState = {
-  inputId: "",
-  inputPw: ""
+  register: {
+    email: "",
+    username: "",
+    password: "",
+    passwordConfirm: ""
+  },
+  login: {
+    email: "",
+    password: ""
+  }
 };
-
 export default handleActions(
   {
-    [CHANGE_INPUT_ID]: (state, action) =>
+    // 인풋 변경 리듀서
+    [CHANGE_INPUT]: (state, action) => {
       produce(state, draft => {
-        draft.inputId = action.payload;
-      }),
-    [CHANGE_INPUT_PW]: (state, action) =>
-      produce(state, draft => {
-        draft.inputPw = action.payload;
-      }),
+        const { form, name, value } = action.payload;
+
+        // 로직 변경 필요 - 코드가 너무 복잡함(상황이 여러 개)
+        // 액션은 실행되지만 State가 변경되지 않는 버그 존재
+        if (form === "login") {
+          if (name === "email") {
+            draft.login.email = value;
+          } else {
+            draft.login.password = value;
+          }
+        }
+
+        if (form === "register") {
+          if (name === "email") {
+            state.register.email = value;
+          } else if (name === "password") {
+            draft.register.password = value;
+          } else if (name === "passwordConfirm") {
+            draft.register.passwordConfirm = value;
+          } else if (name === "username") {
+            draft.register.username = value;
+          }
+        }
+      });
+    },
     [LOGIN]: (state, action) =>
       produce(state, draft => {
         // 로그인 API를 호출해서 id와 pw 전달, serviceMode를 ture로 변경

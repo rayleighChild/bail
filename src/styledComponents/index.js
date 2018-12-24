@@ -20,6 +20,7 @@ export {
   GLayout,
   GSider,
   LLayout,
+  LMLayout,
   MLayout,
   MSider,
   ShadowedBox,

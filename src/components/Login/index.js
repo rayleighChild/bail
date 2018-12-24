@@ -10,16 +10,9 @@ import {
   SocialLoginBtn,
   LoginButton
 } from "../../styledComponents";
+import { Link } from "react-router-dom";
 
-const Login = ({
-  inputId,
-  inputPw,
-  onKeyPress,
-  onIdChange,
-  onPwChange,
-  onSubmit,
-  onMoveReg
-}) => {
+const Login = ({ email, password, onKeyPress, onChange, onSubmit }) => {
   return (
     <LLayout>
       <ShadowedBox>
@@ -32,10 +25,10 @@ const Login = ({
             <div className="label">이메일</div>
             <input
               type="text"
-              value={inputId}
+              value={email}
               name="email"
               placeholder="이메일"
-              onChange={onIdChange}
+              onChange={onChange}
               onKeyPress={onKeyPress}
             />
             <div className="label">비밀번호</div>
@@ -43,15 +36,15 @@ const Login = ({
               type="password"
               name="password"
               placeholder="비밀번호"
-              value={inputPw}
-              onChange={onPwChange}
+              value={password}
+              onChange={onChange}
               onKeyPress={onKeyPress}
             />
             <LoginButton className="submit-btn" onClick={onSubmit}>
               로그인
             </LoginButton>
-            <RightAlignedBtn onClick={onMoveReg}>
-              <a href="/">회원가입</a>
+            <RightAlignedBtn>
+              <Link to="/auth/register">회원가입</Link>
             </RightAlignedBtn>
           </SInfoInputForm>
           <div className="social-login">

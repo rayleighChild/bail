@@ -2,11 +2,20 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { Login } from "../components";
+import { Register } from "../components";
 import * as authActions from "../store/modules/auth";
 import * as baseActions from "../store/modules/base";
 
-class LoginContainer extends Component {
+class FormContainer extends Component {
+  // 페이지에 진입 할 때 헤더를 비활성화
+  componentWillMount() {
+    this.props.BaseActions.setHeaderVisibility(false);
+  }
+
+  // 페이지에서 벗어 날 때 다시 활성화
+  componentWillUnmount() {
+    this.props.BaseActions.setHeaderVisibility(true);
+  }
 
   // 입력 값에 따라 상태 변경
   handleChange = e => {
@@ -16,7 +25,7 @@ class LoginContainer extends Component {
     AuthActions.changeInput({
       name,
       value,
-      form: "login"
+      form: "register"
     });
   };
 
@@ -38,12 +47,13 @@ class LoginContainer extends Component {
   };
 
   render() {
-    const { email, password } = this.props;
-    console.log(email);
+    const { email, password, username, passwordConfirm } = this.props;
     return (
-      <Login
+      <Register
         email={email}
         password={password}
+        username={username}
+        passwordConfirm={passwordConfirm}
         onKeyPress={this.handleKeyPress}
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
@@ -54,7 +64,9 @@ class LoginContainer extends Component {
 
 const mapStateToProps = ({ auth }) => ({
   email: auth.email,
-  password: auth.password
+  password: auth.password,
+  username: auth.username,
+  passwordConfirm: auth.passwordConfirm
 });
 
 // 이런 구조로 하면 나중에 다양한 리덕스 모듈을 적용해야 하는 상황에서 유용합니다.
@@ -67,4 +79,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginContainer);
+)(FormContainer);

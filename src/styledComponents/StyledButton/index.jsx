@@ -73,6 +73,8 @@ const RightAlignedBtn = styled.div`
 
   & a {
     color: ${oc.gray[6]};
+    text-decoration: none;
+
     &:hover {
       color: ${oc.gray[7]};
     }

@@ -20,6 +20,8 @@ export {
   GLayout,
   GSider,
   LLayout,
+  HLayout,
+  InfoLayout,
   LMLayout,
   MLayout,
   MSider,

@@ -88,9 +88,11 @@ const SendBtn = styled(RoundedBtn)`
 
 const SocialLoginBtn = styled(BorderedButton)`
   &.ant-btn {
-    margin-top: 1em;
-    width: 25em;
-    height: 4em;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
+    height: 3rem;
     font-size: 0.8rem;
   }
 `;

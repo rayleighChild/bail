@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import oc from "open-color";
 
-import { Form } from "antd";
-
-const SChatForm = styled(Form)`
+const SChatForm = styled.form`
   &.ant-form {
   }
 `;
 
-const SInfoInputForm = styled(Form)`
+const SInfoInputForm = styled.form`
   &.ant-form {
     & + & {
       margin-top: 1rem;
@@ -27,7 +25,7 @@ const SInfoInputForm = styled(Form)`
   }
 `;
 
-const SRegisterForm = styled(Form)`
+const SRegisterForm = styled.form`
   &.ant-form {
   }
 `;

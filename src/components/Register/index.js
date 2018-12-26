@@ -22,7 +22,7 @@ const Register = ({
     <LLayout>
       <ShadowedBox>
         <div className="logo-wrapper">
-          <a href="/">Bail</a>
+          <Link to="/auth/register">Bail</Link>
         </div>
         <div className="content-wrapper">
           <div className="title">회원가입</div>

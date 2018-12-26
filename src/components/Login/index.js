@@ -18,7 +18,7 @@ const Login = ({ email, password, onKeyPress, onChange, onSubmit }) => {
     <LLayout>
       <ShadowedBox>
         <div className="logo-wrapper">
-          <a href="/">Bail</a>
+          <Link to="/">Bail</Link>
         </div>
         <div className="content-wrapper">
           <div className="title">로그인</div>

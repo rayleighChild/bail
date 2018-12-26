@@ -60,7 +60,7 @@ const ShadowedBox = styled(Layout)`
   width: 500px;
   ${shadow(2)}
   .logo-wrapper {
-    background: ${oc.teal[7]};
+    background: ${oc.cyan[7]};
     height: 5rem;
     display: flex;
     align-items: center;

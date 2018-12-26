@@ -33,10 +33,14 @@ class FormContainer extends Component {
   handleSubmit = () => {
     const { AuthActions } = this.props;
 
-    AuthActions.logIn();
+    AuthActions.register();
 
-    // 인풋 비우기
-    AuthActions.changeInput("");
+    // 이메일에 대한 인풋 비우기
+    AuthActions.changeInput({
+      name: "email",
+      value: "",
+      form: "register"
+    });
   };
 
   handleKeyPress = e => {

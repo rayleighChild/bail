@@ -7,6 +7,15 @@ import * as authActions from "../store/modules/auth";
 import * as baseActions from "../store/modules/base";
 
 class LoginContainer extends Component {
+  // 페이지에 진입 할 때 헤더를 비활성화
+  componentWillMount() {
+    this.props.BaseActions.setHeaderVisibility(false);
+  }
+
+  // 페이지에서 벗어 날 때 다시 활성화
+  componentWillUnmount() {
+    this.props.BaseActions.setHeaderVisibility(true);
+  }
 
   // 입력 값에 따라 상태 변경
   handleChange = e => {
@@ -26,8 +35,12 @@ class LoginContainer extends Component {
 
     AuthActions.logIn();
 
-    // 인풋 비우기
-    AuthActions.changeInput("");
+    // 이메일에 대한 인풋 비우기
+    AuthActions.changeInput({
+      name: "email",
+      value: "",
+      form: "login"
+    });
   };
 
   handleKeyPress = e => {

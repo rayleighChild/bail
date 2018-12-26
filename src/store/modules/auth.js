@@ -3,9 +3,11 @@ import produce from "immer";
 
 const CHANGE_INPUT = "auth/CHANGE_INPUT";
 const LOGIN = "auth/LOGIN";
+const REGISTER = "auth/REGISTER";
 
 export const changeInput = createAction(CHANGE_INPUT, text => text);
 export const logIn = createAction(LOGIN);
+export const register = createAction(REGISTER);
 
 const initialState = {
   register: {
@@ -19,6 +21,7 @@ const initialState = {
     password: ""
   }
 };
+
 export default handleActions(
   {
     // 인풋 변경 리듀서
@@ -26,33 +29,22 @@ export default handleActions(
       produce(state, draft => {
         const { form, name, value } = action.payload;
 
-        // 로직 변경 필요 - 코드가 너무 복잡함(상황이 여러 개)
-        // 액션은 실행되지만 State가 변경되지 않는 버그 존재
-        if (form === "login") {
-          if (name === "email") {
-            draft.login.email = value;
-          } else {
-            draft.login.password = value;
-          }
-        }
-
-        if (form === "register") {
-          if (name === "email") {
-            state.register.email = value;
-          } else if (name === "password") {
-            draft.register.password = value;
-          } else if (name === "passwordConfirm") {
-            draft.register.passwordConfirm = value;
-          } else if (name === "username") {
-            draft.register.username = value;
-          }
-        }
+        // state를 직접 변경해 불변성 유지에 문제가 될 수 있지 않을까?
+        // 또한, 로그인 컴포넌트 <-> 회원가입 컴포넌트 이동 시 이전 상태에는 변화가 없는 문제가 있음.
+        state[form][name] = value;
       });
     },
     [LOGIN]: (state, action) =>
       produce(state, draft => {
         // 로그인 API를 호출해서 id와 pw 전달, serviceMode를 ture로 변경
         // id = state.auth.inputId, pw = state.auth.inputPw
+      }),
+    [REGISTER]: (state, action) =>
+      produce(state, draft => {
+        /* database에 email, username, password, passwordConfirm 를 전달(유효성 검사),
+        정상 완료 시 serviceMode를 ture로 변경 */
+        // email = register.email, password = register.password,
+        // username = register.username, passwordConfirm = register.passwordConfirm
       })
   },
   initialState

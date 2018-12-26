@@ -7,14 +7,20 @@ import * as authActions from "../store/modules/auth";
 import * as baseActions from "../store/modules/base";
 
 class FormContainer extends Component {
-  // 페이지에 진입 할 때 헤더를 비활성화
+  // 페이지에 진입 할 때
   componentWillMount() {
+    // 헤더를 비활성화
     this.props.BaseActions.setHeaderVisibility(false);
   }
 
   // 페이지에서 벗어 날 때 다시 활성화
   componentWillUnmount() {
+    // 헤더를 활성화
     this.props.BaseActions.setHeaderVisibility(true);
+
+    // 회원가입 폼 초기화
+    const { AuthActions } = this.props;
+    AuthActions.initializeForm("register");
   }
 
   // 입력 값에 따라 상태 변경
@@ -34,13 +40,6 @@ class FormContainer extends Component {
     const { AuthActions } = this.props;
 
     AuthActions.register();
-
-    // 이메일에 대한 인풋 비우기
-    AuthActions.changeInput({
-      name: "email",
-      value: "",
-      form: "register"
-    });
   };
 
   handleKeyPress = e => {

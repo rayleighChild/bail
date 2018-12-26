@@ -2,10 +2,12 @@ import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
 
 const CHANGE_INPUT = "auth/CHANGE_INPUT";
+const INITIALIZE_FORM = "auth/INITIALIZE_FORM";
 const LOGIN = "auth/LOGIN";
 const REGISTER = "auth/REGISTER";
 
-export const changeInput = createAction(CHANGE_INPUT, text => text);
+export const changeInput = createAction(CHANGE_INPUT); // { form, name, value }
+export const initializeForm = createAction(INITIALIZE_FORM); // form
 export const logIn = createAction(LOGIN);
 export const register = createAction(REGISTER);
 
@@ -45,7 +47,13 @@ export default handleActions(
         정상 완료 시 serviceMode를 ture로 변경 */
         // email = register.email, password = register.password,
         // username = register.username, passwordConfirm = register.passwordConfirm
-      })
+      }),
+    [INITIALIZE_FORM]: (state, action) => {
+      // this is for immutable
+      // const initialForm = initialState.get(action.payload);
+      // return state.set(action.payload, initialForm);
+      produce(state, draft => {});
+    }
   },
   initialState
 );

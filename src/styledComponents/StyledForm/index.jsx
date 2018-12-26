@@ -15,13 +15,6 @@ const SInfoInputForm = styled(Form)`
     }
   }
 
-  &.login-form .label {
-    font-size: 0.8rem;
-    color: ${oc.gray[6]};
-    margin-top: 0.25rem;
-    margin-bottom: 0.1rem;
-  }
-
   &.login-form input {
     width: 100%;
     border: 1px solid ${oc.gray[3]};

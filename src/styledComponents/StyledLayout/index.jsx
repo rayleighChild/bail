@@ -89,6 +89,15 @@ const ShadowedBox = styled(Layout)`
   }
 `;
 
+const SLabel = styled.div`
+  & {
+    font-size: 0.8rem;
+    color: ${oc.gray[6]};
+    margin-top: 0.25rem;
+    margin-bottom: 0.1rem;
+  }
+`;
+
 const ULayout = styled(Layout)`
   &.ant-layout {
   }
@@ -108,6 +117,7 @@ export {
   MLayout,
   MSider,
   ShadowedBox,
+  SLabel,
   ULayout,
   USider
 };

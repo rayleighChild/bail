@@ -24,6 +24,7 @@ export {
   MLayout,
   MSider,
   ShadowedBox,
+  SLabel,
   ULayout,
   USider
 } from "./StyledLayout";

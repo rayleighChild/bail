@@ -3,6 +3,7 @@ import {
   LLayout,
   RightAlignedBtn,
   ShadowedBox,
+  SLabel,
   SInfoInputForm,
   LoginButton
 } from "../../styledComponents";
@@ -26,7 +27,7 @@ const Register = ({
         <div className="content-wrapper">
           <div className="title">회원가입</div>
           <SInfoInputForm className="login-form">
-            <div className="label">이메일</div>
+            <SLabel>이메일</SLabel>
             <input
               name="email"
               placeholder="이메일"
@@ -34,7 +35,7 @@ const Register = ({
               onChange={onChange}
               onKeyPress={onKeyPress}
             />
-            <div className="label">닉네임</div>
+            <SLabel>닉네임</SLabel>
             <input
               name="username"
               placeholder="닉네임"
@@ -42,7 +43,7 @@ const Register = ({
               onChange={onChange}
               onKeyPress={onKeyPress}
             />
-            <div className="label">비밀번호</div>
+            <SLabel>비밀번호</SLabel>
             <input
               type="password"
               name="password"
@@ -51,7 +52,7 @@ const Register = ({
               onChange={onChange}
               onKeyPress={onKeyPress}
             />
-            <div className="label">비밀번호 확인</div>
+            <SLabel>비밀번호 확인</SLabel>
             <input
               type="password"
               name="passwordConfirm"

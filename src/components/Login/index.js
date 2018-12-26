@@ -12,10 +12,15 @@ import {
   LoginButton
 } from "../../styledComponents";
 import { Link } from "react-router-dom";
+import { HomeInfo } from "..";
 
 const Login = ({ email, password, onKeyPress, onChange, onSubmit }) => {
+  // 적절한 사이즈일 때 true, 아니면 false
+  const properSize = true;
+
   return (
     <LLayout>
+      {properSize ? <HomeInfo /> : ""}
       <ShadowedBox>
         <div className="logo-wrapper">
           <Link to="/">Bail</Link>

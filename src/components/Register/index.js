@@ -7,6 +7,7 @@ import {
   SInfoInputForm,
   LoginButton
 } from "../../styledComponents";
+import { HomeInfo } from "..";
 import { Link } from "react-router-dom";
 
 const Register = ({
@@ -18,8 +19,12 @@ const Register = ({
   onChange,
   onSubmit
 }) => {
+  // 적절한 사이즈일 때 true, 아니면 false
+  const properSize = true;
+
   return (
     <LLayout>
+      {properSize ? <HomeInfo /> : ""}
       <ShadowedBox>
         <div className="logo-wrapper">
           <Link to="/auth/register">Bail</Link>

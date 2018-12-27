@@ -7,7 +7,7 @@ import { shadow } from "../../lib/styleUtil";
 const { Sider } = Layout;
 
 const AppLayout = styled(Layout)`
-  &.ant-layout {
+  & {
     width: 100%;
     height: 100%;
   }
@@ -23,13 +23,40 @@ const GSider = styled(Sider)`
   }
 `;
 
-const LLayout = styled(Layout)`
-  &.ant-layout {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+const HLayout = styled(Layout)`
+  & {
+    width: 100%;
+    height: 100%;
   }
+`;
+
+const InfoLayout = styled(Layout)`
+  & {
+    width: calc(60% - 2rem);
+    font-family: sans-serif;
+
+    .HomeLogo {
+      width: 100%;
+      height: 10rem;
+      text-align: center;
+      font-size: 7rem;
+    }
+
+    .HomeContent {
+      width: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+`;
+
+const LLayout = styled(Layout)`
+  & {
+    padding-top: 7%;
+    display: flex;
+    justify-content: center;
+  }
+
   .social-login {
     margin: 0;
     width: 100%;
@@ -37,6 +64,15 @@ const LLayout = styled(Layout)`
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
+  }
+`;
+
+const LMLayout = styled(Layout)`
+  & {
+    width: 100%;
+    height: 100%;
+    .login-form-wrapper {
+    }
   }
 `;
 
@@ -48,10 +84,14 @@ const MSider = styled(Sider)`
 `;
 
 const ShadowedBox = styled(Layout)`
-  width: 500px;
-  ${shadow(2)}
+  & {
+    width: 35%;
+    margin-right: 10%;
+    ${shadow(2)}
+  }
+
   .logo-wrapper {
-    background: ${oc.teal[7]};
+    background: ${oc.cyan[7]};
     height: 5rem;
     display: flex;
     align-items: center;
@@ -80,6 +120,15 @@ const ShadowedBox = styled(Layout)`
   }
 `;
 
+const SLabel = styled.div`
+  & {
+    font-size: 0.8rem;
+    color: ${oc.gray[6]};
+    margin-top: 0.25rem;
+    margin-bottom: 0.1rem;
+  }
+`;
+
 const ULayout = styled(Layout)`
   &.ant-layout {
   }
@@ -94,10 +143,14 @@ export {
   AppLayout,
   GLayout,
   GSider,
+  HLayout,
+  InfoLayout,
   LLayout,
+  LMLayout,
   MLayout,
   MSider,
   ShadowedBox,
+  SLabel,
   ULayout,
   USider
 };

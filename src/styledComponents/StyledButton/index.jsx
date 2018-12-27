@@ -43,7 +43,7 @@ const LoginButton = styled.div`
     padding-top: 0.6rem;
     padding-bottom: 0.5rem;
 
-    background: ${oc.teal[6]};
+    background: ${oc.cyan[6]};
     color: white;
 
     text-align: center;
@@ -55,12 +55,12 @@ const LoginButton = styled.div`
     transition: 0.2s all;
 
     &:hover {
-      background: ${oc.teal[5]};
+      background: ${oc.cyan[5]};
       ${shadow(0)}
     }
 
     &:active {
-      background: ${oc.teal[7]};
+      background: ${oc.cyan[7]};
     }
   }
 `;
@@ -88,9 +88,11 @@ const SendBtn = styled(RoundedBtn)`
 
 const SocialLoginBtn = styled(BorderedButton)`
   &.ant-btn {
-    margin-top: 1em;
-    width: 25em;
-    height: 4em;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
+    height: 3rem;
     font-size: 0.8rem;
   }
 `;

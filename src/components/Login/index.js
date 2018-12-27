@@ -6,23 +6,29 @@ import {
   SGoogleIcon,
   SGithubIcon,
   ShadowedBox,
+  SLabel,
   SInfoInputForm,
   SocialLoginBtn,
   LoginButton
 } from "../../styledComponents";
 import { Link } from "react-router-dom";
+import { HomeInfo } from "..";
 
 const Login = ({ email, password, onKeyPress, onChange, onSubmit }) => {
+  // 적절한 사이즈일 때 true, 아니면 false
+  const properSize = true;
+
   return (
     <LLayout>
+      {properSize ? <HomeInfo /> : ""}
       <ShadowedBox>
         <div className="logo-wrapper">
-          <a href="/">Bail</a>
+          <Link to="/">Bail</Link>
         </div>
         <div className="content-wrapper">
           <div className="title">로그인</div>
           <SInfoInputForm className="login-form">
-            <div className="label">이메일</div>
+            <SLabel>이메일</SLabel>
             <input
               type="text"
               value={email}
@@ -31,7 +37,7 @@ const Login = ({ email, password, onKeyPress, onChange, onSubmit }) => {
               onChange={onChange}
               onKeyPress={onKeyPress}
             />
-            <div className="label">비밀번호</div>
+            <SLabel>비밀번호</SLabel>
             <input
               type="password"
               name="password"

@@ -7,6 +7,21 @@ import * as authActions from "../store/modules/auth";
 import * as baseActions from "../store/modules/base";
 
 class LoginContainer extends Component {
+  // 페이지에 진입 할 때
+  componentWillMount() {
+    // 헤더를 비활성화
+    this.props.BaseActions.setHeaderVisibility(false);
+  }
+
+  // 페이지에서 벗어 날 때
+  componentWillUnmount() {
+    // 헤더를 활성화
+    this.props.BaseActions.setHeaderVisibility(true);
+
+    // 로그인 폼 초기화
+    const { AuthActions } = this.props;
+    AuthActions.initializeForm("login");
+  }
 
   // 입력 값에 따라 상태 변경
   handleChange = e => {
@@ -25,9 +40,6 @@ class LoginContainer extends Component {
     const { AuthActions } = this.props;
 
     AuthActions.logIn();
-
-    // 인풋 비우기
-    AuthActions.changeInput("");
   };
 
   handleKeyPress = e => {

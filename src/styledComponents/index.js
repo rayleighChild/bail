@@ -20,10 +20,13 @@ export {
   GLayout,
   GSider,
   LLayout,
+  HLayout,
+  InfoLayout,
   LMLayout,
   MLayout,
   MSider,
   ShadowedBox,
+  SLabel,
   ULayout,
   USider
 } from "./StyledLayout";

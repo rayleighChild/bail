@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
 import { LoginContainer, RegisterContainer } from "../containers";
 
 class Home extends Component {
